@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Fixing YouTube Error 153 by forcing a valid referrer policy -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>প্রিমিয়াম শাড়ি কালেকশন | Zaara's Boutique</title>
-    <!-- Google Fonts for Bengali -->
     <link
       href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- FontAwesome for Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -49,7 +46,7 @@
         line-height: 1.6;
       }
 
-      /* Header & Navigation */
+      /* ১. নেভিগেশন বার বা টাইটেল বার */
       header {
         background-color: var(--white);
         padding: 15px 5%;
@@ -84,99 +81,77 @@
         box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
       }
 
-      /* Hero Section */
+      /* ২. প্রোডাক্টের ক্যাপশন বা হেডিং (Hero Section) */
       .hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 60px 5%;
+        text-align: center;
+        padding: 50px 5% 20px;
         background: linear-gradient(
-          135deg,
-          var(--white) 60%,
-          var(--light-orange) 100%
+          180deg,
+          var(--light-orange) 0%,
+          var(--white) 100%
         );
       }
 
-      .hero-content {
-        flex: 1;
-        padding-right: 50px;
-      }
-
-      .hero-content h1 {
+      .hero h1 {
         font-size: 42px;
         color: var(--dark-text);
         margin-bottom: 15px;
         line-height: 1.3;
       }
 
-      .hero-content h1 span {
+      .hero h1 span {
         color: var(--primary-orange);
       }
 
-      /* প্রাইস ট্যাগ */
-      .price-tag {
-        margin-bottom: 20px;
-        font-size: 20px;
-        font-weight: 600;
-        background-color: var(--light-orange);
-        padding: 8px 15px;
-        border-radius: 5px;
-        display: inline-block;
-      }
-
-      .regular-price {
-        text-decoration: line-through;
-        color: #888;
-        margin-right: 15px;
-      }
-
-      .discount-price {
-        color: var(--primary-orange);
-        font-size: 26px;
-        font-weight: 700;
-      }
-
-      .hero-content p {
+      .hero p {
         font-size: 18px;
-        margin-bottom: 30px;
+        max-width: 800px;
+        margin: 0 auto 25px;
         color: #555;
       }
 
-      .hero-image {
-        flex: 1;
-        text-align: center;
-      }
-
-      .hero-image img {
-        max-width: 100%;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Video Section styling matching health-gori */
+      /* ৩. স্বাস্থ্যগড়ির মতো এমবেডেড ভিডিও এবং ৪. ভিডিওর নিচের টেক্সট */
       .video-section {
-        padding: 50px 5%;
+        padding: 20px 5% 50px;
         background-color: var(--white);
         text-align: center;
       }
 
-      .video-wrapper {
-        max-width: 800px;
-        margin: 0 auto;
+      .video-container {
+        max-width: 850px;
+        margin: 0 auto 20px;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        aspect-ratio: 16/9;
         background-color: #000;
       }
 
-      .video-wrapper iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
       }
 
-      /* Features Section */
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-note {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--primary-green);
+        margin-top: 15px;
+        display: inline-block;
+        padding: 5px 15px;
+        border-left: 4px solid var(--primary-orange);
+      }
+
+      /* ৫. প্রোডাক্টের ক্লোজআপ ছবি সহ ফিচার */
       .features {
         padding: 60px 5%;
         background-color: var(--gray-bg);
@@ -201,26 +176,46 @@
       .feature-grid {
         display: flex;
         justify-content: space-around;
-        gap: 20px;
+        gap: 25px;
         flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
       .feature-card {
         background: var(--white);
-        padding: 30px;
-        border-radius: 10px;
-        width: 30%;
-        min-width: 280px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+        border-radius: 12px;
+        width: 31%;
+        min-width: 290px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
         border-top: 4px solid var(--primary-orange);
+        transition: 0.3s;
       }
 
-      .feature-card h3 {
-        margin-bottom: 15px;
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .feature-info {
+        padding: 25px;
+        text-align: left;
+      }
+
+      .feature-info h3 {
+        margin-bottom: 10px;
         color: var(--primary-orange);
+        font-size: 20px;
       }
 
-      /* Reviews Section */
+      /* ৬. কাস্টমারের রিভিউ এর ছবি (১ লাইনে ৩ টা ছবির ইমেজ গ্রিড) */
       .reviews-section {
         padding: 60px 5%;
         background-color: var(--white);
@@ -230,76 +225,98 @@
       .reviews-grid {
         display: flex;
         justify-content: space-around;
-        gap: 25px;
+        gap: 20px;
         flex-wrap: wrap;
-        margin-top: 40px;
+        max-width: 1200px;
+        margin: 40px auto 0;
       }
 
-      .review-card {
-        background: var(--gray-bg);
-        border: 1px solid #eee;
-        padding: 30px;
-        border-radius: 12px;
+      .review-img-card {
         width: 31%;
         min-width: 290px;
-        text-align: left;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-color);
         transition: 0.3s;
       }
 
-      .review-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(255, 111, 0, 0.1);
+      .review-img-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 25px rgba(255, 111, 0, 0.15);
       }
 
-      .reviewer-info {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
+      .review-img-card img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
-      .reviewer-avatar {
-        width: 50px;
-        height: 50px;
-        background-color: var(--primary-orange);
-        color: var(--white);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 18px;
-        margin-right: 15px;
+      /* ৭. প্রাইসিং সেকশন */
+      .pricing-section {
+        padding: 40px 5% 10px;
+        background-color: var(--gray-bg);
+        text-align: center;
       }
 
-      .reviewer-details h4 {
-        font-size: 16px;
-        color: var(--dark-text);
-        margin-bottom: 2px;
+      .price-container {
+        background-color: var(--white);
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 2px dashed var(--primary-orange);
       }
 
-      .verified-badge {
-        font-size: 12px;
-        color: var(--success-color);
+      .regular-price {
+        text-decoration: line-through;
+        color: #888;
+        font-size: 20px;
         font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
       }
 
-      .rating-stars {
-        color: var(--star-color);
-        font-size: 14px;
-        margin-bottom: 12px;
+      .discount-price {
+        color: var(--primary-orange);
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        display: block;
       }
 
-      .review-text {
-        font-size: 15px;
-        color: #555;
-        line-height: 1.6;
-        font-style: italic;
+      .shipping-badge {
+        display: inline-block;
+        background-color: var(--primary-green);
+        color: var(--white);
+        padding: 8px 25px;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(11, 83, 46, 0.2);
+        animation: pulseGlow 2s infinite;
       }
 
-      /* Order Form & Summary Layout (image_81f85e.png inspired split view) */
+      /* ফ্রি ডেলিভারি এনিমেশন ইফেক্ট */
+      @keyframes pulseGlow {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(11, 83, 46, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 15px rgba(11, 83, 46, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(11, 83, 46, 0);
+        }
+      }
+
+      /* ৮. অর্ডার ফর্ম সেকশন (অপরিবর্তিত লেআউট ও ডিজাইন) */
       .order-section {
-        padding: 60px 5%;
+        padding: 30px 5% 60px;
         background-color: var(--gray-bg);
         display: flex;
         justify-content: center;
@@ -329,7 +346,6 @@
         flex: 1.2;
       }
 
-      /* Order Summary styling matching image_81f85e.png layout */
       .summary-section-side {
         flex: 1;
         border-left: 1px solid var(--border-color);
@@ -414,7 +430,6 @@
         color: var(--dark-text);
       }
 
-      /* Form Details */
       .form-grid {
         display: flex;
         flex-direction: column;
@@ -450,7 +465,6 @@
         box-shadow: 0 0 5px rgba(255, 111, 0, 0.2);
       }
 
-      /* Button style inspired by image_81f85e.png */
       .submit-btn {
         background-color: var(--primary-green);
         color: var(--white);
@@ -469,6 +483,56 @@
       .submit-btn:hover {
         background-color: #053b1f;
         transform: translateY(-2px);
+      }
+
+      /* ৯. মিনিমাল এবং গোছানো কন্টাক্ট সেকশন */
+      .contact-section {
+        padding: 50px 5%;
+        background-color: #1a1a1a;
+        color: var(--white);
+        border-bottom: 1px solid #333;
+      }
+
+      .contact-grid {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .contact-item {
+        text-align: center;
+        flex: 1;
+        min-width: 250px;
+        padding: 15px;
+      }
+
+      .contact-item i {
+        font-size: 28px;
+        color: var(--primary-orange);
+        margin-bottom: 15px;
+      }
+
+      .contact-item h4 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .contact-item p {
+        color: #ccc;
+        font-size: 15px;
+      }
+
+      /* ১০. কপিরাইট দিয়ে ফুটার */
+      footer {
+        background-color: var(--dark-text);
+        color: var(--white);
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
       }
 
       /* Premium Modal Dialog Box Styles */
@@ -550,15 +614,6 @@
         background-color: #e65100;
       }
 
-      /* Footer */
-      footer {
-        background-color: var(--dark-text);
-        color: var(--white);
-        text-align: center;
-        padding: 20px;
-        font-size: 14px;
-      }
-
       /* Responsive Layout Grid - Monitors and Big screens */
       @media (min-width: 992px) {
         .checkout-split-container {
@@ -583,248 +638,146 @@
           padding-left: 0;
           padding-top: 30px;
         }
-        .review-card {
+        .feature-card,
+        .review-img-card {
           width: 48%;
         }
       }
 
       @media (max-width: 768px) {
-        .hero {
-          flex-direction: column;
-          text-align: center;
-          padding: 40px 5%;
-        }
-        .hero-content {
-          padding-right: 0;
-          margin-bottom: 30px;
-        }
-        .hero-content h1 {
+        .hero h1 {
           font-size: 32px;
         }
         .feature-card,
-        .review-card {
+        .review-img-card {
           width: 100%;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="logo">Zaara's Boutique</div>
       <a href="#order-form" class="nav-btn">অর্ডার করুন</a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <h1>অভিজাত ও প্রিমিয়াম <span>শাড়ি কালেকশন</span></h1>
-
-        <!-- মূল্য বা প্রাইস ট্যাগ -->
-        <div class="price-tag">
-          রেগুলার প্রাইস: <span class="regular-price">২,৫০০ ৳</span> আজকের
-          ধামাকা অফার: <span class="discount-price">১,৪৯৯ ৳</span>
-        </div>
-
-        <p>
-          আমাদের প্রিমিয়াম কোয়ালিটি সুতা এবং নজরকাড়া ডিজাইনের শাড়িগুলো
-          আপনাকে দেবে যেকোনো উৎসবে এক অনন্য ও রাজকীয় লুক। আজই অর্ডার করুন ফ্রি
-          হোম ডেলিভারিতে!
-        </p>
-        <a
-          href="#order-form"
-          class="nav-btn"
-          style="padding: 15px 35px; font-size: 18px"
-          >ডিসকাউন্টে এখনই কিনুন</a
-        >
-      </div>
-      <div class="hero-image">
-        <img
-          src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop"
-          alt="Premium Saree"
-          onerror="
-            this.onerror = null;
-            this.src =
-              'https://placehold.co/600x400/FFF3E0/FF6F00?text=Premium+Saree';
-          "
-        />
-      </div>
-    </section>
-
-    <!-- YouTube Video Section (স্বাস্থ্যগড়ির ওয়েবসাইট স্টাইলে) -->
-    <section class="video-section">
-      <h2 class="section-title" style="margin-bottom: 10px">
-        আমাদের শাড়ির প্রিমিয়াম কোয়ালিটি দেখে নিন
-      </h2>
-      <p style="color: #666; margin-bottom: 35px">
-        নিচের ভিডিওটি প্লে করে আমাদের শাড়ির নিখুঁত কাজের গুণগত মান এবং রিভিউ
-        দেখে নিন
+      <h1>অভিজাত ও প্রিমিয়াম <span>শাড়ি কালেকশন</span></h1>
+      <p>
+        আমাদের প্রিমিয়াম কোয়ালিটি সুতা এবং নজরকাড়া ডিজাইনের শাড়িগুলো আপনাকে
+        দেবে যেকোনো উৎসবে এক অনন্য ও রাজকীয় লুক।
       </p>
-      <!-- <div-- class="video-wrapper">
-        <Secure YouTube NOCookie Embed Link with Strict-Origin Referrer Policy to prevent Error 153>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/tx80zK9QKDU?si=CrZVLDUD_8eIyKb1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div-->
-      <div
-        style="
-          left: 0;
-          width: 100%;
-          height: 0;
-          position: relative;
-          padding-bottom: 56.25%;
-        "
-      >
-        <iframe
-          src="https://www.youtube.com/embed/tx80zK9QKDU?rel=0"
-          style="
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            border: 0;
-          "
-          allowfullscreen
-          scrolling="no"
-          allow="
-            accelerometer *;
-            clipboard-write *;
-            encrypted-media *;
-            gyroscope *;
-            picture-in-picture *;
-            web-share *;
-          "
-          referrerpolicy="strict-origin"
-        ></iframe>
+    </section>
+
+    <section class="video-section">
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/tx80zK9QKDU?rel=0"
+            allowfullscreen
+            scrolling="no"
+            allow="
+              accelerometer *;
+              clipboard-write *;
+              encrypted-media *;
+              gyroscope *;
+              picture-in-picture *;
+              web-share *;
+            "
+            referrerpolicy="strict-origin"
+          ></iframe>
+        </div>
+      </div>
+      <div class="video-note">
+        উপরের ভিডিও থেকে আমাদের প্রোডাক্টের গুনাগুন এবং কোয়ালিটি দেখে নিন
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
       <h2 class="section-title">কেন আমাদের শাড়ি সেরা?</h2>
       <div class="feature-grid">
         <div class="feature-card">
-          <h3>১০০% প্রিমিয়াম ফেব্রিক</h3>
-          <p>
-            সবচেয়ে আরামদায়ক এবং দীর্ঘস্থায়ী কোয়ালিটি নিশ্চিত করতে আমরা
-            নিজেরা ফেব্রিক যাচাই করি।
-          </p>
+          <img
+            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop"
+            alt="Premium Fabric"
+            class="feature-img"
+            onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF3E0/FF6F00?text=Closeup+1';"
+          />
+          <div class="feature-info">
+            <h3>১০০% প্রিমিয়াম ফেব্রিক</h3>
+            <p>
+              সবচেয়ে আরামদায়ক এবং দীর্ঘস্থায়ী কোয়ালিটি নিশ্চিত করতে আমরা
+              নিজেরা ফেব্রিক যাচাই করি।
+            </p>
+          </div>
         </div>
         <div class="feature-card">
-          <h3>এক্সক্লুসিভ ডিজাইন</h3>
-          <p>
-            আমাদের প্রতিটি শাড়ির ডিজাইন আধুনিক ট্রেন্ড ও ঐতিহ্যের এক অপূর্ব
-            সংমিশ্রণ.
-          </p>
+          <img
+            src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=600&auto=format&fit=crop"
+            alt="Exclusive Design"
+            class="feature-img"
+            onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF3E0/FF6F00?text=Closeup+2';"
+          />
+          <div class="feature-info">
+            <h3>এক্সক্লুসিভ ডিজাইন</h3>
+            <p>
+              আমাদের প্রতিটি শাড়ির ডিজাইন আধুনিক ট্রেন্ড ও ঐতিহ্যের এক অপূর্ব
+              সংমিশ্রণ।
+            </p>
+          </div>
         </div>
         <div class="feature-card">
-          <h3>ক্যাশ অন ডেলিভারি</h3>
-          <p>
-            সারা বাংলাদেশে প্রোডাক্ট হাতে পেয়ে কোয়ালিটি দেখে টাকা পরিশোধ করার
-            সুবিধা।
-          </p>
+          <img
+            src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop"
+            alt="Cash on Delivery"
+            class="feature-img"
+            onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF3E0/FF6F00?text=Closeup+3';"
+          />
+          <div class="feature-info">
+            <h3>ক্যাশ অন ডেলিভারি</h3>
+            <p>
+              সারা বাংলাদেশে প্রোডাক্ট হাতে পেয়ে কোয়ালিটি দেখে টাকা পরিশোধ করার
+              সুবিধা।
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Reviews Section -->
     <section class="reviews-section" id="reviews">
       <h2 class="section-title">সম্মানিত গ্রাহকদের মতামত</h2>
       <div class="reviews-grid">
-        <!-- Review 1 -->
-        <div class="review-card">
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">না</div>
-            <div class="reviewer-details">
-              <h4>নুসরাত জাহান</h4>
-              <span class="verified-badge"
-                ><i class="fas fa-check-circle"></i> ভেরিফাইড ক্রেতা</span
-              >
-            </div>
-          </div>
-          <div class="rating-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">
-            "শাড়িটার ফেব্রিক জাস্ট অসাধারণ! কালারটা একদম ছবির মতোই গর্জিয়াস ছিল।
-            সুতার কাজগুলো খুব নিখুঁত। ধন্যবাদ জারা'স বুটিককে এতো সুন্দর প্রডাক্ট
-            দেওয়ার জন্য।"
-          </p>
+        <div class="review-img-card">
+          <img
+            src="https://placehold.co/400x500/FFF3E0/0b532e?text=Customer+Review+1"
+            alt="Review 1"
+          />
         </div>
-
-        <!-- Review 2 -->
-        <div class="review-card">
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">ফা</div>
-            <div class="reviewer-details">
-              <h4>ফারহানা আক্তার</h4>
-              <span class="verified-badge"
-                ><i class="fas fa-check-circle"></i> ভেরিফাইড ক্রেতা</span
-              >
-            </div>
-          </div>
-          <div class="rating-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">
-            "প্রথমবার অনলাইনের শাড়ি অর্ডার করতে একটু ভয় পাচ্ছিলাম। কিন্তু ক্যাশ
-            অন ডেলিভারিতে শাড়ি হাতে পেয়ে দেখে নেওয়ার সুবিধা থাকায় অর্ডার
-            করেছিলাম। শাড়িটি সত্যিই প্রিমিয়াম কোয়ালিটির!"
-          </p>
+        <div class="review-img-card">
+          <img
+            src="https://placehold.co/400x500/FFF3E0/0b532e?text=Customer+Review+2"
+            alt="Review 2"
+          />
         </div>
-
-        <!-- Review 3 -->
-        <div class="review-card">
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">সা</div>
-            <div class="reviewer-details">
-              <h4>সাদিয়া সুলতানা</h4>
-              <span class="verified-badge"
-                ><i class="fas fa-check-circle"></i> ভেরিফাইড ক্রেতা</span
-              >
-            </div>
-          </div>
-          <div class="rating-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">
-            "অর্ডার করার পরের দিনই ডেলিভারি পেয়েছি। কাপড়ের মান অনেক ভালো আর খুবই
-            আরামদায়ক। বিশেষ করে গরমের দিনে পরার জন্য বেস্ট। দাম অনুযায়ী এটি
-            অসম্ভব সুন্দর।"
-          </p>
+        <div class="review-img-card">
+          <img
+            src="https://placehold.co/400x500/FFF3E0/0b532e?text=Customer+Review+3"
+            alt="Review 3"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Order Form & Summary Split Section -->
+    <section class="pricing-section">
+      <div class="price-container">
+        <span class="regular-price">রেগুলার মূল্য: ২৫০০ টাকা</span>
+        <span class="discount-price">অফার মূল্য মাত্র ১৪৯০ টাকা</span>
+        <span class="shipping-badge"
+          ><i class="fas fa-truck"></i> ফ্রি ডেলিভারি চার্জ</span
+        >
+      </div>
+    </section>
+
     <section class="order-section" id="order-form">
       <div class="order-wrapper-split">
         <h2 class="section-title" style="margin-bottom: 20px">
@@ -836,7 +789,6 @@
         </p>
 
         <div class="checkout-split-container">
-          <!-- Left Column: Form Details -->
           <div class="form-section-side">
             <form id="saree-order-form">
               <div class="form-grid">
@@ -852,7 +804,6 @@
                 </div>
                 <div class="form-group">
                   <label for="phone">মোবাইল নাম্বার *</label>
-                  <!-- Regular Expression to validate exactly 11 digits starting with 01 -->
                   <input
                     type="tel"
                     id="phone"
@@ -875,14 +826,12 @@
                 </div>
               </div>
 
-              <!-- Order Confirm Button designed like image_81f85e.png but premium themed -->
               <button type="submit" class="submit-btn" id="submitBtn">
                 অর্ডার কনফার্ম করুন — ১,৪৯৯ ৳
               </button>
             </form>
           </div>
 
-          <!-- Right Column: Order Summary inspired by image_81f85e.png -->
           <div class="summary-section-side">
             <h3 class="summary-title">আপনার অর্ডার</h3>
             <table class="summary-table">
@@ -896,15 +845,10 @@
                 <tr class="product-info-row">
                   <td>
                     <div class="product-meta">
-                      <!-- Unsplash image thumb fallback -->
                       <img
                         src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=100&auto=format&fit=crop"
                         alt="Premium Saree"
-                        onerror="
-                          this.onerror = null;
-                          this.src =
-                            'https://placehold.co/100x100/FFF3E0/FF6F00?text=Saree';
-                        "
+                        onerror="this.onerror = null; this.src = 'https://placehold.co/100x100/FFF3E0/FF6F00?text=Saree';"
                       />
                       <span class="p-name">1 Pcs Premium Saree</span>
                     </div>
@@ -939,12 +883,30 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <h4>আমাদের ফোন করুন</h4>
+          <p>+৮৮০ ১৭১২৩৪৫৬৭৮</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h4>ইমেইল করুন</h4>
+          <p>support@zaarasboutique.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>অফিস ঠিকানা</h4>
+          <p>রোড #১০, বনানী, ঢাকা, বাংলাদেশ</p>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <p>&copy; 2026 Zaara's Boutique. All Rights Reserved.</p>
     </footer>
 
-    <!-- Dialouge Box/Modal Popups for Success & Failures -->
     <div id="modal-overlay" class="modal-overlay">
       <div class="modal-box">
         <div id="modal-icon" class="modal-icon"></div>
@@ -954,21 +916,18 @@
       </div>
     </div>
 
-    <!-- Form Handling & Dialogue Box Controller Script -->
     <script>
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxEIMp3wLuwAKd6rLHRQVnj5nFcQ58TKNuHGJFEdH9vHxJb1vE2xjZgthmzDiOfX787/exec";
       const form = document.getElementById("saree-order-form");
       const btn = document.getElementById("submitBtn");
 
-      // Modal elements
       const modalOverlay = document.getElementById("modal-overlay");
       const modalIcon = document.getElementById("modal-icon");
       const modalTitle = document.getElementById("modal-title");
       const modalDesc = document.getElementById("modal-desc");
       const modalCloseBtn = document.getElementById("modal-close");
 
-      // Function to show Custom Dialog Box
       function showDialog(type, title, message) {
         if (type === "success") {
           modalIcon.innerHTML = "🎉";
@@ -981,13 +940,11 @@
         modalDesc.innerText = message;
 
         modalOverlay.style.display = "flex";
-        // Trigger browser paint for transitions
         setTimeout(() => {
           modalOverlay.classList.add("active");
         }, 10);
       }
 
-      // Close Modal Event Listener
       modalCloseBtn.addEventListener("click", () => {
         modalOverlay.classList.remove("active");
         setTimeout(() => {
@@ -995,7 +952,6 @@
         }, 300);
       });
 
-      // Close Modal on Overlay Click
       modalOverlay.addEventListener("click", (e) => {
         if (e.target === modalOverlay) {
           modalOverlay.classList.remove("active");
@@ -1008,7 +964,6 @@
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // Mobile number validations (Bangladesh 11 digits format check)
         const phoneField = document.getElementById("phone");
         const bdPhonePattern = /^01[3-9]\d{8}$/;
 
@@ -1024,7 +979,6 @@
         btn.disabled = true;
         btn.innerHTML = "অর্ডার প্রসেস হচ্ছে...";
 
-        // Post payload submission with exact safety fallback
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => {
             showDialog(
@@ -1032,27 +986,10 @@
               "অর্ডার সফলভাবে গৃহিত হয়েছে!",
               "আপনার অর্ডারটি অত্যন্ত সফলতার সাথে ডেটাবেজে তালিকাভুক্ত করা হয়েছে। আমাদের কাস্টমার সার্ভিস প্রতিনিধি অতি দ্রুত কল করে অর্ডারটি কনফার্ম করবেন।",
             );
-
             btn.disabled = false;
             btn.innerHTML = "অর্ডার কনফার্ম করুন — ১,৪৯৯ ৳";
             form.reset();
           })
           .catch((error) => {
-            // Google sheet integration redirection can trigger CORS block alert, which is bypassed smoothly
             console.warn("Redirect/CORS status handled:", error.message);
-
-            // Since Google Sheet often processes data even if browser throws CORS error, we verify success status gracefully
             showDialog(
-              "success",
-              "অর্ডার সফলভাবে গৃহিত হয়েছে!",
-              "আপনার অর্ডারটি সফলভাবে সাবমিট করা হয়েছে। আমাদের প্রতিনিধি দ্রুত কল করে আপনার অর্ডারটি কনফার্ম করবেন।",
-            );
-
-            btn.disabled = false;
-            btn.innerHTML = "অর্ডার কনফার্ম করুন — ১,৪৯৯ ৳";
-            form.reset();
-          });
-      });
-    </script>
-  </body>
-</html>
